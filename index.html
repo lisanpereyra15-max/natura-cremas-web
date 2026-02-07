@@ -57,7 +57,7 @@
             text-decoration: none; 
             font-weight: 900;
             letter-spacing: -0.5px;
-            text-transform: lowercase;
+            /* SE ELIMINÓ lowercase PARA RESPETAR MAYÚSCULAS */
         }
 
         .sidenav { 
@@ -103,7 +103,7 @@
         }
 
         .main-logo-img {
-            width: 140px; /* Tamaño ideal */
+            width: 140px; 
             height: auto;
             border-radius: 50%;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -167,7 +167,8 @@
         <button class="dropdown-btn" onclick="toggleDropdown()">Perfumería 🠻</button>
         <div class="dropdown-container" id="perfumeMenu">
             <a href="perfumeria-todos.html">Ver Todos</a>
-            <a href="perfumeria-mujer.html">Mujer</a> <a href="perfumeria-hombre.html">Hombre</a>
+            <a href="perfumeria-mujer.html">Mujer</a>
+            <a href="perfumeria-hombre.html">Hombre</a>
         </div>
 
         <a href="cremas.html">Cremas</a>
