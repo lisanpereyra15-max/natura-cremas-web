@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natura | Belleza y Cuidado</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
+    <style>
+        :root { 
+            --natura-naranja: #f48312; 
+            --natura-soft: #fff3e6;
+            --texto: #333;
+            --blanco: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body { 
+            background-color: var(--blanco); 
+            color: var(--texto); 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        /* NAVEGACIÓN Y MENÚ */
+        .top-bar { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background-color: rgba(255, 255, 255, 0.98); 
+            padding: 15px 40px; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+            border-bottom: 3px solid var(--natura-naranja); 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .hamburger-btn { 
+            font-size: 14px; 
+            cursor: pointer; 
+            background: none; 
+            border: none; 
+            color: var(--natura-naranja); 
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .nav-logo-text { 
+            font-size: 1.4rem; 
+            color: var(--natura-naranja); 
+            text-decoration: none; 
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-transform: lowercase;
+        }
+
+        .sidenav { 
+            height: 100%; width: 0; position: fixed; z-index: 2000; 
+            top: 0; left: 0; background-color: var(--blanco); overflow-x: hidden; 
+            transition: 0.5s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.1); 
+        }
+        .sidenav a { padding: 10px 40px; text-decoration: none; font-size: 16px; color: #444; display: block; border-bottom: 1px solid #f9f9f9; transition: 0.3s; }
+        .sidenav a:hover { background-color: var(--natura-soft); color: var(--natura-naranja); }
+        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px !important; color: var(--natura-naranja) !important; }
+
+        /* HEADER */
+        header { 
+            text-align: center; 
+            padding: 60px 20px 40px; 
+        }
+
+        .main-logo-img {
+            width: 220px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* BENEFICIOS */
+        .benefits-bar {
+            background-color: var(--natura-soft);
+            padding: 25px 20px; 
+            margin: 20px 0;
+            display: flex; 
+            justify-content: center; 
+            gap: 50px;
+            border-top: 1px solid rgba(244, 131, 18, 0.2);
+            border-bottom: 1px solid rgba(244, 131, 18, 0.2);
+        }
+
+        .benefit-item { display: flex; align-items: center; gap: 8px; }
+        .benefit-title { font-size: 13px; color: #555; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .benefit-icon { color: var(--natura-naranja); font-size: 18px; }
+
+        /* PRODUCTOS */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; flex: 1; }
+        .section-title { margin-bottom: 40px; text-align: center; font-size: 1.8rem; color: var(--texto); font-weight: 300; position: relative; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--natura-naranja); margin: 10px auto; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .producto { background-color: var(--blanco); transition: 0.3s; border-radius: 8px; overflow: hidden; border: 1px solid #f0f0f0; }
+        .producto:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.08); transform: translateY(-5px); }
+
+        .foto-container { width: 100%; height: 320px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        .info { padding: 20px; text-align: center; border-top: 1px solid #f9f9f9; }
+        .info h3 { font-size: 1rem; margin-bottom: 10px; color: #444; height: 45px; display: flex; align-items: center; justify-content: center; }
+        .precio { font-size: 1.2rem; color: var(--natura-naranja); font-weight: bold; margin-bottom: 20px; display: block; }
+        
+        .btn-comprar { display: inline-block; padding: 12px 30px; background-color: var(--natura-naranja); color: white; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; border-radius: 50px; transition: 0.3s; }
+        .btn-comprar:hover { background-color: #e67600; transform: scale(1.05); }
+
+        /* FOOTER */
+        footer { background-color: #333; text-align: center; padding: 60px 20px; color: #999; font-size: 12px; }
+
+        .wsp-fixed { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 100; display: flex; align-items: center; gap: 8px; }
+
+        @media (max-width: 768px) { .benefits-bar { flex-direction: column; gap: 15px; align-items: flex-start; padding-left: 20%; } }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <button class="hamburger-btn" onclick="openNav()">☰ MENÚ</button>
+        <a href="index.html" class="nav-logo-text">natura</a>
+        <div style="width: 50px;"></div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <p style="padding: 15px 40px 5px; color: #999; font-size: 11px; letter-spacing: 2px;">PERFUMERÍA</p>
+        <a href="perfumeria-todos.html">Ver Todos</a>
+        <a href="perfumeria-mujer.html">Mujer</a>
+        <a href="perfumeria-hombre.html">Hombre</a>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 40px;">
+        <a href="cremas.html">Cremas</a>
+        <a href="cabello.html">Cabello</a>
+        <a href="maquillaje.html">Maquillaje</a>
+        <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold;">Contacto Directo</a>
+    </div>
+
+    <header>
+        <img src="natura.jpg" alt="Natura" class="main-logo-img">
+        <p style="color: #666; font-style: italic;">Bien estar bien</p>
+    </header>
+
+    <div class="benefits-bar">
+        <div class="benefit-item">
+            <span class="benefit-icon">🍀</span>
+            <span class="benefit-title">100% Vegano</span>
+        </div>
+        <div class="benefit-item">
+            <span class="benefit-icon">♻️</span>
+            <span class="benefit-title">Repuestos Sustentables</span>
+        </div>
+        <div class="benefit-item">
+            <span class="benefit-icon">🌎</span>
+            <span class="benefit-title">Carbono Neutro</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="grid">
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="https://images.unsplash.com/photo-1626784215021-2e39ccf971cd?auto=format&fit=crop&q=80&w=400" alt="Perfume Natura">
+                </div>
+                <div class="info">
+                    <h3>Perfume Kaiak Femenino</h3>
+                    <span class="precio">$28.900</span>
+                    <a href="#" class="btn-comprar">Ver producto</a>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=400" alt="Crema Natura">
+                </div>
+                <div class="info">
+                    <h3>Hidratante Corporal Ekos Castaña</h3>
+                    <span class="precio">$15.400</span>
+                    <a href="#" class="btn-comprar">Ver producto</a>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?auto=format&fit=crop&q=80&w=400" alt="Maquillaje">
+                </div>
+                <div class="info">
+                    <h3>Labial Matte Intransferible Una</h3>
+                    <span class="precio">$9.200</span>
+                    <a href="#" class="btn-comprar">Ver producto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>NATURA &copy; 2026 | Consultoría de Belleza</p>
+        <p style="margin-top: 10px;">Enviamos a todo el país con empaques reciclables.</p>
+    </footer>
+
+    <a href="https://wa.me/5493512832957" class="wsp-fixed">PEDIR POR WHATSAPP</a>
+
+    <script>
+        function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+    </script>
+</body>
+</html>
