@@ -29,9 +29,37 @@
             top: 0; left: 0; background-color: white; overflow-x: hidden; 
             transition: 0.5s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.1); 
         }
-        .sidenav a { padding: 10px 40px; text-decoration: none; font-size: 16px; color: #333; display: block; border-bottom: 1px solid #f9f9f9; }
-        .sidenav a:hover { color: var(--natura-naranja); background-color: var(--natura-soft); }
-        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px !important; color: var(--natura-naranja) !important; }
+
+        .sidenav a, .dropdown-btn { 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            font-size: 16px; 
+            color: #444; 
+            display: block; 
+            border-bottom: 1px solid #f9f9f9; 
+            transition: 0.3s; 
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .sidenav a:hover, .dropdown-btn:hover { background-color: var(--natura-soft); color: var(--natura-naranja); }
+        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px !important; color: var(--natura-naranja) !important; border: none !important; }
+
+        /* Estilos para el submenú desplegable */
+        .dropdown-container {
+            display: none;
+            background-color: #fcfcfc;
+        }
+
+        .dropdown-container a {
+            padding-left: 60px;
+            font-size: 14px;
+            color: #666;
+        }
 
         /* HEADER SECCIÓN */
         .header-seccion { text-align: center; padding: 60px 20px; background: var(--natura-soft); border-bottom: 1px solid #eee; }
@@ -86,18 +114,18 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
-        <p style="padding: 15px 40px 5px; color: #999; font-size: 11px; letter-spacing: 2px;">PERFUMERÍA</p>
-        <a href="perfumeria-todos.html">Ver Todos</a>
-        <a href="perfumeria-mujer.html">Mujer</a>
-        <a href="perfumeria-hombre.html">Hombre</a>
-        
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 40px;">
-        
+        <button class="dropdown-btn" onclick="toggleDropdown()">Perfumería ▼</button>
+        <div class="dropdown-container" id="perfumeMenu">
+            <a href="perfumeria-todos.html">Ver Todos</a>
+            <a href="perfumeria-mujer.html">Mujer</a>
+            <a href="perfumeria-hombre.html">Hombre</a>
+        </div>
+
         <a href="cremas.html">Cremas</a>
         <a href="cabello.html">Cabello</a>
         <a href="maquillaje.html">Maquillaje</a>
         
-        <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold;">Contacto Directo</a>
+        <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold; border-top: 1px solid #eee;">Contacto Directo</a>
     </div>
 
     <div class="header-seccion">
@@ -125,7 +153,7 @@
                     <a href="#" class="btn-comprar">VER DETALLES</a>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
     <footer>
@@ -133,8 +161,23 @@
     </footer>
 
     <script>
-        function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
-        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+        function openNav() { 
+            document.getElementById("mySidenav").style.width = "280px"; 
+        }
+        
+        function closeNav() { 
+            document.getElementById("mySidenav").style.width = "0"; 
+            document.getElementById("perfumeMenu").style.display = "none";
+        }
+
+        function toggleDropdown() {
+            var dropdown = document.getElementById("perfumeMenu");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
     </script>
 </body>
 </html>

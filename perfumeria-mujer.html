@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfumería Femenina - Natura</title>
+    <title>Perfumería Masculina - Natura</title>
     <style>
         :root { 
             --natura-naranja: #f48312; 
             --natura-soft: #fff3e6; 
             --texto: #333; 
-            --mujer-rosa: #ffb7c5;
-            --mujer-texto: #d16b7d;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -31,15 +29,43 @@
             top: 0; left: 0; background-color: white; overflow-x: hidden; 
             transition: 0.5s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.1); 
         }
-        .sidenav a { padding: 10px 40px; text-decoration: none; font-size: 16px; color: #333; display: block; border-bottom: 1px solid #f9f9f9; }
-        .sidenav a:hover { color: var(--natura-naranja); background-color: var(--natura-soft); }
-        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px !important; color: var(--natura-naranja) !important; }
+
+        .sidenav a, .dropdown-btn { 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            font-size: 16px; 
+            color: #444; 
+            display: block; 
+            border-bottom: 1px solid #f9f9f9; 
+            transition: 0.3s; 
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .sidenav a:hover, .dropdown-btn:hover { background-color: var(--natura-soft); color: var(--natura-naranja); }
+        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px !important; color: var(--natura-naranja) !important; border: none !important; }
+
+        /* Estilos para el submenú desplegable */
+        .dropdown-container {
+            display: none;
+            background-color: #fcfcfc;
+        }
+
+        .dropdown-container a {
+            padding-left: 60px;
+            font-size: 14px;
+            color: #666;
+        }
 
         /* HEADER SECCIÓN */
-        .nav-mujer { border-bottom: 2px solid var(--mujer-rosa); padding: 40px 20px; text-align: center; background: #fffafb; }
-        .nav-mujer h1 { color: var(--mujer-texto); margin-bottom: 10px; font-weight: 300; }
+        .nav-hombre { border-bottom: 2px solid #2c3e50; padding: 40px 20px; text-align: center; background: #f8f9fa; }
+        .nav-hombre h1 { color: #2c3e50; margin-bottom: 10px; font-weight: 300; }
         .breadcrumb { font-size: 13px; color: #999; }
-        .breadcrumb a { color: var(--mujer-texto); text-decoration: none; }
+        .breadcrumb a { color: #2c3e50; text-decoration: none; }
 
         /* GRID PRODUCTOS */
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
@@ -50,12 +76,11 @@
             text-align: center; 
             border-radius: 12px; 
             transition: 0.3s;
-            background: white;
         }
         .producto:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); transform: translateY(-5px); }
         
-        .tag-mujer { 
-            background: var(--mujer-rosa); 
+        .tag-hombre { 
+            background: #2c3e50; 
             color: white; 
             padding: 4px 12px; 
             border-radius: 20px; 
@@ -63,7 +88,6 @@
             letter-spacing: 1px;
             display: inline-block;
             margin-bottom: 15px;
-            font-weight: bold;
         }
 
         .producto img { width: 100%; height: 220px; object-fit: contain; margin-bottom: 15px; }
@@ -72,16 +96,16 @@
         
         .btn-ver {
             display: inline-block;
-            padding: 10px 25px;
-            border: 1px solid var(--mujer-texto);
-            color: var(--mujer-texto);
+            padding: 10px 20px;
+            border: 1px solid #2c3e50;
+            color: #2c3e50;
             text-decoration: none;
             border-radius: 25px;
             font-size: 12px;
             font-weight: bold;
             transition: 0.3s;
         }
-        .btn-ver:hover { background: var(--mujer-texto); color: white; }
+        .btn-ver:hover { background: #2c3e50; color: white; }
 
         footer { text-align: center; padding: 40px; color: #bbb; font-size: 12px; border-top: 1px solid #eee; margin-top: 40px; }
     </style>
@@ -97,44 +121,59 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
-        <p style="padding: 15px 40px 5px; color: #999; font-size: 11px; letter-spacing: 2px;">PERFUMERÍA</p>
-        <a href="perfumeria-todos.html">Ver Todos</a>
-        <a href="perfumeria-mujer.html">Mujer</a>
-        <a href="perfumeria-hombre.html">Hombre</a>
-        
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 40px;">
-        
+        <button class="dropdown-btn" onclick="toggleDropdown()">Perfumería ▼</button>
+        <div class="dropdown-container" id="perfumeMenu">
+            <a href="perfumeria-todos.html">Ver Todos</a>
+            <a href="perfumeria-mujer.html">Mujer</a>
+            <a href="perfumeria-hombre.html">Hombre</a>
+        </div>
+
         <a href="cremas.html">Cremas</a>
         <a href="cabello.html">Cabello</a>
         <a href="maquillaje.html">Maquillaje</a>
         
-        <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold;">Contacto Directo</a>
+        <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold; border-top: 1px solid #eee;">Contacto Directo</a>
     </div>
 
-    <div class="nav-mujer">
-        <div class="breadcrumb"><a href="index.html">Inicio</a> / Perfumería Femenina</div>
-        <h1>Perfumería para Ella</h1>
+    <div class="nav-hombre">
+        <div class="breadcrumb"><a href="index.html">Inicio</a> / Perfumería Masculina</div>
+        <h1>Perfumería para Él</h1>
     </div>
 
     <div class="container">
         <div class="grid">
             <div class="producto">
-                <span class="tag-mujer">FLORAL</span>
-                <img src="https://images.unsplash.com/photo-1585120040315-2241b774ad0f?w=400" alt="Luna Radiante">
-                <h3>Luna Radiante</h3>
-                <span class="precio">$38.000</span>
+                <span class="tag-hombre">AMADERADO</span>
+                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Homen Potence">
+                <h3>Homen Potence</h3>
+                <span class="precio">$41.500</span>
                 <a href="#" class="btn-ver">VER DETALLES</a>
             </div>
-            </div>
+        </div>
     </div>
 
     <footer>
-        <p>NATURA &copy; 2026 | El reflejo de tu propia belleza.</p>
+        <p>NATURA &copy; 2026 | Fragancias que conectan con tu esencia.</p>
     </footer>
 
     <script>
-        function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
-        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+        function openNav() { 
+            document.getElementById("mySidenav").style.width = "280px"; 
+        }
+        
+        function closeNav() { 
+            document.getElementById("mySidenav").style.width = "0"; 
+            document.getElementById("perfumeMenu").style.display = "none";
+        }
+
+        function toggleDropdown() {
+            var dropdown = document.getElementById("perfumeMenu");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
     </script>
 </body>
 </html>
