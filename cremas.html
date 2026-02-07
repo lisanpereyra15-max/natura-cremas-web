@@ -85,7 +85,7 @@
             text-decoration: none;
         }
 
-        /* CONTENEDOR DE PRODUCTOS */
+        /* FILTROS */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 
         .filtro-cremas {
@@ -105,13 +105,15 @@
             cursor: pointer;
             font-size: 13px;
             transition: 0.3s;
+            font-weight: 600;
         }
 
-        .btn-filtro:hover {
+        .btn-filtro:hover, .btn-filtro.active {
             background: var(--natura-naranja);
             color: white;
         }
 
+        /* GRID */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -124,10 +126,12 @@
             overflow: hidden;
             transition: 0.3s;
             text-align: center;
+            background: #fff;
         }
 
         .card:hover {
             box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transform: translateY(-5px);
         }
 
         .card img {
@@ -145,6 +149,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: block;
         }
 
         .card-info h3 { font-size: 1.1rem; margin: 10px 0; color: #444; height: 50px; display: flex; align-items: center; justify-content: center;}
@@ -200,14 +205,14 @@
 
     <div class="container">
         <div class="filtro-cremas">
-            <button class="btn-filtro">Todo</button>
-            <button class="btn-filtro">Cuerpo</button>
-            <button class="btn-filtro">Manos y Pies</button>
-            <button class="btn-filtro">Rostro</button>
+            <button class="btn-filtro active" onclick="filterCremas('todo')">Todo</button>
+            <button class="btn-filtro" onclick="filterCremas('cuerpo')">Cuerpo</button>
+            <button class="btn-filtro" onclick="filterCremas('manos')">Manos y Pies</button>
+            <button class="btn-filtro" onclick="filterCremas('rostro')">Rostro</button>
         </div>
 
-        <div class="grid">
-            <div class="card">
+        <div class="grid" id="cremasGrid">
+            <div class="card" data-category="cuerpo">
                 <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400" alt="Tododia">
                 <div class="card-info">
                     <span class="linea-crema">Línea Tododia</span>
@@ -217,7 +222,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" data-category="manos">
                 <img src="https://images.unsplash.com/photo-1556229167-7319131979b2?w=400" alt="Ekos">
                 <div class="card-info">
                     <span class="linea-crema">Línea Ekos</span>
@@ -227,7 +232,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" data-category="rostro">
                 <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=400" alt="Chronos">
                 <div class="card-info">
                     <span class="linea-crema">Línea Chronos</span>
@@ -260,6 +265,24 @@
             } else {
                 dropdown.style.display = "block";
             }
+        }
+
+        function filterCremas(category) {
+            const cards = document.querySelectorAll('.card');
+            const btns = document.querySelectorAll('.btn-filtro');
+            
+            // Estilo botones
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // Filtrado
+            cards.forEach(card => {
+                if (category === 'todo' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
     </script>
 </body>
