@@ -77,9 +77,7 @@
             width: 100%;
             text-align: left;
             background: none;
-            border-left: none;
-            border-right: none;
-            border-top: none;
+            border: none;
             cursor: pointer;
             font-family: inherit;
         }
@@ -87,7 +85,6 @@
         .sidenav a:hover, .dropdown-btn:hover { background-color: var(--natura-soft); color: var(--natura-naranja); }
         .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px !important; color: var(--natura-naranja) !important; border: none !important; }
 
-        /* Estilos para el submenú desplegable */
         .dropdown-container {
             display: none;
             background-color: #fcfcfc;
@@ -99,16 +96,23 @@
             color: #666;
         }
 
-        /* HEADER */
+        /* HEADER Y LOGO AJUSTADO */
         header { 
             text-align: center; 
-            padding: 60px 20px 40px; 
+            padding: 40px 20px 20px; 
         }
 
         .main-logo-img {
-            width: 220px;
+            width: 150px; /* Tamaño reducido para que no sea gigante */
             height: auto;
+            border-radius: 50%; /* Lo hace circular si la imagen es cuadrada */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-logo-img:hover {
+            transform: scale(1.05);
         }
 
         /* BENEFICIOS */
@@ -175,12 +179,12 @@
         <a href="cremas.html">Cremas</a>
         <a href="cabello.html">Cabello</a>
         <a href="maquillaje.html">Maquillaje</a>
-        <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold; border-top: 1px solid #eee;">Contacto Directo</a>
+        <a href="https://wa.me/5493512832957?text=Hola!%20Deseo%20realizar%20una%20consulta%20general" target="_blank" style="color: #25d366; font-weight: bold; border-top: 1px solid #eee;">Contacto Directo</a>
     </div>
 
     <header>
         <img src="natura.png" alt="Natura" class="main-logo-img">
-        <p style="color: #666; font-style: italic;">Bien estar bien</p>
+        <p style="color: #666; font-style: italic; font-size: 0.9rem;">Bien estar bien</p>
     </header>
 
     <div class="benefits-bar">
@@ -208,7 +212,7 @@
                 <div class="info">
                     <h3>Perfume Kaiak Femenino</h3>
                     <span class="precio">$28.900</span>
-                    <a href="#" class="btn-comprar">Ver producto</a>
+                    <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20el%20Perfume%20Kaiak%20Femenino" class="btn-comprar" target="_blank">Ver detalles</a>
                 </div>
             </div>
             <div class="producto">
@@ -218,7 +222,7 @@
                 <div class="info">
                     <h3>Hidratante Corporal Ekos Castaña</h3>
                     <span class="precio">$15.400</span>
-                    <a href="#" class="btn-comprar">Ver producto</a>
+                    <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20el%20Hidratante%20Corporal%20Ekos%20Castaña" class="btn-comprar" target="_blank">Ver detalles</a>
                 </div>
             </div>
             <div class="producto">
@@ -228,7 +232,7 @@
                 <div class="info">
                     <h3>Labial Matte Intransferible Una</h3>
                     <span class="precio">$9.200</span>
-                    <a href="#" class="btn-comprar">Ver producto</a>
+                    <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20el%20Labial%20Matte%20Intransferible%20Una" class="btn-comprar" target="_blank">Ver detalles</a>
                 </div>
             </div>
         </div>
@@ -239,7 +243,7 @@
         <p style="margin-top: 10px;">Enviamos a todo el país con empaques reciclables.</p>
     </footer>
 
-    <a href="https://wa.me/5493512832957" class="wsp-fixed">WHATSAPP💬</a>
+    <a href="https://wa.me/5493512832957" class="wsp-fixed" target="_blank">WHATSAPP💬</a>
 
     <script>
         function openNav() { 
@@ -248,7 +252,6 @@
         
         function closeNav() { 
             document.getElementById("mySidenav").style.width = "0"; 
-            // Cerrar el submenú también al cerrar el menú principal
             document.getElementById("perfumeMenu").style.display = "none";
         }
 
