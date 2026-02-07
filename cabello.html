@@ -53,9 +53,7 @@
         .breadcrumb { font-size: 13px; color: #999; margin-bottom: 20px; }
         .breadcrumb a { color: #666; text-decoration: none; }
 
-        /* CONTENEDOR */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-
+        /* FILTROS */
         .tags-container {
             display: flex;
             justify-content: center;
@@ -65,23 +63,24 @@
         }
 
         .tag {
-            padding: 6px 18px;
+            padding: 8px 25px;
             background: #f5f5f5;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 13px;
             color: #666;
             cursor: pointer;
             transition: 0.3s;
             border: 1px solid transparent;
+            font-weight: 600;
         }
 
-        .tag:hover, .tag.active {
-            background: var(--natura-soft);
-            color: var(--natura-naranja);
-            border: 1px solid var(--natura-naranja);
+        .tag.active, .tag:hover {
+            background: var(--natura-naranja);
+            color: white;
         }
 
         /* PRODUCTOS */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .grid-cabello {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -92,16 +91,14 @@
             border-radius: 15px;
             background: #fff;
             transition: 0.4s;
-            position: relative;
             padding-bottom: 20px;
+            border: 1px solid #f0f0f0;
         }
-
-        .producto-card:hover { transform: translateY(-10px); }
 
         .img-wrap {
             background: var(--azul-limpieza);
-            border-radius: 15px;
-            height: 300px;
+            border-radius: 15px 15px 0 0;
+            height: 280px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -109,41 +106,25 @@
             margin-bottom: 15px;
         }
 
-        .img-wrap img { max-width: 80%; height: auto; mix-blend-mode: multiply; }
-
-        .badge-linea {
-            font-size: 10px;
-            font-weight: bold;
-            color: var(--natura-naranja);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .img-wrap img { max-width: 70%; height: auto; mix-blend-mode: multiply; }
 
         .producto-info { text-align: center; padding: 0 15px; }
-        .producto-info h3 { font-size: 1.1rem; margin: 8px 0; color: #222; }
-        .producto-info p { font-size: 0.9rem; color: #777; margin-bottom: 15px; }
-
-        .precio-box {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--texto);
-            margin-bottom: 20px;
-        }
+        .badge-linea { font-size: 10px; font-weight: bold; color: var(--natura-naranja); letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;}
+        .producto-info h3 { font-size: 1.1rem; margin: 8px 0; color: #222; min-height: 50px;}
+        .precio-box { font-size: 1.4rem; font-weight: bold; color: var(--texto); margin: 15px 0; }
 
         .btn-add {
             display: inline-block;
-            width: 80%;
+            width: 85%;
             padding: 12px;
-            border: 2px solid var(--natura-naranja);
-            color: var(--natura-naranja);
+            background: var(--natura-naranja);
+            color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             font-size: 13px;
             transition: 0.3s;
         }
-
-        .btn-add:hover { background: var(--natura-naranja); color: white; }
 
         footer { text-align: center; padding: 60px 20px; background: #fafafa; margin-top: 50px; font-size: 12px; color: #bbb; }
     </style>
@@ -158,74 +139,67 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        
         <p style="padding: 15px 40px 5px; color: #999; font-size: 11px; letter-spacing: 2px;">PERFUMERÍA</p>
         <a href="perfumeria-todos.html">Ver Todos</a>
         <a href="perfumeria-mujer.html">Mujer</a>
         <a href="perfumeria-hombre.html">Hombre</a>
-        
         <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 40px;">
-        
         <a href="cremas.html">Cremas</a>
         <a href="cabello.html">Cabello</a>
         <a href="maquillaje.html">Maquillaje</a>
-        
-        <a href="https://wa.me/5493512832957?text=Hola!%20Me%20interesa%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold;">Contacto Directo</a>
+        <a href="https://wa.me/5493512832957" target="_blank" style="color: #25d366; font-weight: bold;">Contacto Directo</a>
     </div>
 
     <header class="seccion-header">
-        <div class="breadcrumb">
-            <a href="index.html">inicio</a> / cabello
-        </div>
+        <div class="breadcrumb"><a href="index.html">inicio</a> / cabello</div>
         <h1>cabello</h1>
-        <p>Ciencia y naturaleza para el cuidado de tu fibra capilar</p>
+        <p>Ciencia y naturaleza para tu fibra capilar</p>
     </header>
 
     <div class="container">
         <div class="tags-container">
-            <div class="tag active">Todo</div>
-            <div class="tag">Shampoo</div>
-            <div class="tag">Acondicionador</div>
-            <div class="tag">Máscaras</div>
-            <div class="tag">Repuestos</div>
+            <div class="tag active" onclick="filterItems('todo')">Todo</div>
+            <div class="tag" onclick="filterItems('shampoo')">Shampoo</div>
+            <div class="tag" onclick="filterItems('acondicionador')">Acondicionador</div>
         </div>
 
-        <div class="grid-cabello">
-            <div class="producto-card">
-                <div class="img-wrap">
-                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400" alt="Lumina">
-                </div>
+        <div class="grid-cabello" id="productGrid">
+            <div class="producto-card" data-category="shampoo">
+                <div class="img-wrap"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400"></div>
                 <div class="producto-info">
                     <span class="badge-linea">Lumina</span>
                     <h3>Shampoo Químicamente Dañados</h3>
-                    <p>Reconstrucción de la fibra capilar.</p>
                     <div class="precio-box">$8.400</div>
                     <a href="#" class="btn-add">VER DETALLES</a>
                 </div>
             </div>
 
-            <div class="producto-card">
-                <div class="img-wrap">
-                    <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400" alt="Ekos Patauá">
-                </div>
+            <div class="producto-card" data-category="shampoo">
+                <div class="img-wrap"><img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400"></div>
                 <div class="producto-info">
                     <span class="badge-linea">Ekos Patauá</span>
-                    <h3>Tónico de Crecimiento</h3>
-                    <p>Cabello más fuerte y resistente.</p>
-                    <div class="precio-box">$11.200</div>
+                    <h3>Shampoo Refuerzo de Crecimiento</h3>
+                    <div class="precio-box">$7.900</div>
                     <a href="#" class="btn-add">VER DETALLES</a>
                 </div>
             </div>
 
-            <div class="producto-card">
-                <div class="img-wrap">
-                    <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=400" alt="Plant">
-                </div>
+            <div class="producto-card" data-category="acondicionador">
+                <div class="img-wrap"><img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=400"></div>
                 <div class="producto-info">
                     <span class="badge-linea">Natura Plant</span>
                     <h3>Acondicionador Curvas Envolventes</h3>
-                    <p>Definición para rizos perfectos.</p>
                     <div class="precio-box">$7.900</div>
+                    <a href="#" class="btn-add">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto-card" data-category="acondicionador">
+                <div class="img-wrap"><img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=400"></div>
+                <div class="producto-info">
+                    <span class="badge-linea">Lumina</span>
+                    <h3>Acondicionador Pro-Reconstrucción</h3>
+                    <div class="precio-box">$8.100</div>
                     <a href="#" class="btn-add">VER DETALLES</a>
                 </div>
             </div>
@@ -239,6 +213,24 @@
     <script>
         function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
         function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+
+        function filterItems(category) {
+            const products = document.querySelectorAll('.producto-card');
+            const tags = document.querySelectorAll('.tag');
+            
+            // Cambiar estado activo de los botones
+            tags.forEach(t => t.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // Filtrar productos
+            products.forEach(p => {
+                if (category === 'todo' || p.getAttribute('data-category') === category) {
+                    p.style.display = 'block';
+                } else {
+                    p.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>
