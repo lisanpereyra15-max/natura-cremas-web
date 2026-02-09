@@ -9,7 +9,7 @@
             --natura-naranja: #f48312; 
             --natura-soft: #fff3e6; 
             --texto: #333; 
-            --unisex-color: #708090; 
+            --unisex-color: #708090; /* Gris azulado neutro */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -70,14 +70,16 @@
 
         /* GRID PRODUCTOS */
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        
         .producto { 
+            background-color: #fff;
             border: 1px solid #eee; 
-            padding: 25px; 
+            padding: 0; 
             text-align: center; 
             border-radius: 12px; 
             transition: 0.3s;
-            background: white;
+            overflow: hidden;
         }
         .producto:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); transform: translateY(-5px); }
         
@@ -89,26 +91,38 @@
             font-size: 10px; 
             letter-spacing: 1px;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-top: 15px;
             font-weight: bold;
         }
 
-        .producto img { width: 100%; height: 220px; object-fit: contain; margin-bottom: 15px; }
-        .producto h3 { font-size: 1.1rem; margin-bottom: 10px; color: #444; }
+        .foto-container { 
+            width: 100%; 
+            height: 320px; 
+            background: #fff; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
+        }
+        .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        .info { padding: 20px; border-top: 1px solid #f9f9f9; }
+        .info h3 { font-size: 1.1rem; margin-bottom: 10px; color: #444; height: 45px; display: flex; align-items: center; justify-content: center; }
         .precio { color: var(--natura-naranja); font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; display: block; }
         
-        .btn-ver {
+        .btn-comprar {
             display: inline-block;
-            padding: 10px 25px;
-            border: 1px solid var(--unisex-color);
-            color: var(--unisex-color);
+            padding: 12px 30px;
+            background-color: var(--natura-naranja);
+            color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-size: 12px;
             font-weight: bold;
+            text-transform: uppercase;
             transition: 0.3s;
         }
-        .btn-ver:hover { background: var(--unisex-color); color: white; transform: scale(1.05); }
+        .btn-comprar:hover { background-color: #e67600; transform: scale(1.05); }
 
         footer { text-align: center; padding: 40px; color: #bbb; font-size: 12px; border-top: 1px solid #eee; margin-top: 40px; }
     </style>
@@ -142,11 +156,51 @@
     <div class="container">
         <div class="grid">
             <div class="producto">
-                <span class="tag-unisex">CÍTRICO</span>
-                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Águas de Natura">
-                <h3>Águas Jabuticaba</h3>
-                <span class="precio">$25.500</span>
-                <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesó%20el%20producto%20Águas%20Jabuticaba" target="_blank" class="btn-ver">VER DETALLES</a>
+                <span class="tag-unisex">EDT 75 ML</span>
+                <div class="foto-container">
+                    <img src="Ekos Ryo Festa EDT 75 ml.jpg" alt="Ekos Ryo Festa">
+                </div>
+                <div class="info">
+                    <h3>Ekos Ryo Festa</h3>
+                    <span class="precio">$26.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Ekos%20Ryo%20Festa" target="_blank" class="btn-comprar">Pedir detalles</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-unisex">GENDERLESS 75 ML</span>
+                <div class="foto-container">
+                    <img src="Humor Envolve EDT Genderless 75 ml.jpg" alt="Humor Envolve">
+                </div>
+                <div class="info">
+                    <h3>Humor Envolve</h3>
+                    <span class="precio">$24.800</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Humor%20Envolve" target="_blank" class="btn-comprar">Pedir detalles</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-unisex">EDT 75 ML</span>
+                <div class="foto-container">
+                    <img src="Humor Liberta EDT 75 ml.jpg" alt="Humor Liberta">
+                </div>
+                <div class="info">
+                    <h3>Humor Liberta</h3>
+                    <span class="precio">$24.800</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Humor%20Liberta" target="_blank" class="btn-comprar">Pedir detalles</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-unisex">EDT 75 ML</span>
+                <div class="foto-container">
+                    <img src="Humor Transforma EDT 75 ml.jpg" alt="Humor Transforma">
+                </div>
+                <div class="info">
+                    <h3>Humor Transforma</h3>
+                    <span class="precio">$24.800</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Humor%20Transforma" target="_blank" class="btn-comprar">Pedir detalles</a>
+                </div>
             </div>
         </div>
     </div>

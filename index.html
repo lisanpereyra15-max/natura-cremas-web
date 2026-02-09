@@ -28,35 +28,23 @@
 
         /* NAVEGACIÓN Y MENÚ */
         .top-bar { 
-            position: fixed; 
-            top: 0; 
-            width: 100%; 
+            position: fixed; top: 0; width: 100%; 
             background-color: rgba(255, 255, 255, 0.98); 
-            padding: 15px 40px; 
-            display: flex; 
-            justify-content: space-between;
-            align-items: center; 
+            padding: 15px 40px; display: flex; 
+            justify-content: space-between; align-items: center; 
             border-bottom: 3px solid var(--natura-naranja); 
-            z-index: 1000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .hamburger-btn { 
-            font-size: 14px; 
-            cursor: pointer; 
-            background: none; 
-            border: none; 
-            color: var(--natura-naranja); 
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 14px; cursor: pointer; background: none; 
+            border: none; color: var(--natura-naranja); 
+            font-weight: bold; letter-spacing: 1px;
         }
         
         .nav-logo-text { 
-            font-size: 1.4rem; 
-            color: var(--natura-naranja); 
-            text-decoration: none; 
-            font-weight: 900;
-            letter-spacing: -0.5px;
+            font-size: 1.4rem; color: var(--natura-naranja); 
+            text-decoration: none; font-weight: 900; letter-spacing: -0.5px;
         }
 
         .sidenav { 
@@ -66,82 +54,39 @@
         }
         
         .sidenav a, .dropdown-btn { 
-            padding: 15px 40px; 
-            text-decoration: none; 
-            font-size: 16px; 
-            color: #444; 
-            display: block; 
-            border-bottom: 1px solid #f9f9f9; 
-            transition: 0.3s; 
-            width: 100%;
-            text-align: left;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
+            padding: 15px 40px; text-decoration: none; 
+            font-size: 16px; color: #444; display: block; 
+            border-bottom: 1px solid #f9f9f9; transition: 0.3s; 
+            width: 100%; text-align: left; background: none; 
+            border: none; cursor: pointer; font-family: inherit;
         }
 
         .sidenav a:hover, .dropdown-btn:hover { background-color: var(--natura-soft); color: var(--natura-naranja); }
         .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px !important; color: var(--natura-naranja) !important; border: none !important; }
 
-        .dropdown-container {
-            display: none;
-            background-color: #fcfcfc;
-        }
-
-        .dropdown-container a {
-            padding-left: 60px;
-            font-size: 14px;
-            color: #666;
-        }
+        .dropdown-container { display: none; background-color: #fcfcfc; }
+        .dropdown-container a { padding-left: 60px; font-size: 14px; color: #666; }
 
         /* HEADER Y LOGO */
-        header { 
-            text-align: center; 
-            padding: 40px 20px 20px; 
-        }
-
-        .main-logo-img {
-            width: 140px; 
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 10px;
-        }
+        header { text-align: center; padding: 40px 20px 20px; }
+        .main-logo-img { width: 140px; height: auto; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 10px; }
 
         /* BENEFICIOS */
         .benefits-bar {
-            background-color: var(--natura-soft);
-            padding: 25px 20px; 
-            margin: 20px 0;
-            display: flex; 
-            justify-content: center; 
-            gap: 50px;
+            background-color: var(--natura-soft); padding: 25px 20px; 
+            margin: 20px 0; display: flex; justify-content: center; gap: 50px;
             border-top: 1px solid rgba(244, 131, 18, 0.2);
             border-bottom: 1px solid rgba(244, 131, 18, 0.2);
         }
-
         .benefit-item { display: flex; align-items: center; gap: 8px; }
         .benefit-title { font-size: 13px; color: #555; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-        .benefit-icon { color: var(--natura-naranja); font-size: 18px; }
 
         /* PRODUCTOS */
         .container { max-width: 1200px; margin: 0 auto; padding: 20px 20px 60px; flex: 1; }
-        
-        .section-title { 
-            margin-top: 40px;
-            margin-bottom: 30px; 
-            text-align: center; 
-            font-size: 1.8rem; 
-            color: var(--texto); 
-            font-weight: 300; 
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        .section-title { margin-top: 40px; margin-bottom: 30px; text-align: center; font-size: 1.8rem; color: var(--texto); font-weight: 300; text-transform: uppercase; letter-spacing: 2px; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--natura-naranja); margin: 10px auto; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        
         .producto { background-color: var(--blanco); transition: 0.3s; border-radius: 8px; overflow: hidden; border: 1px solid #f0f0f0; }
         .producto:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.08); transform: translateY(-5px); }
 
@@ -157,7 +102,6 @@
 
         /* FOOTER */
         footer { background-color: #333; text-align: center; padding: 60px 20px; color: #999; font-size: 12px; }
-
         .wsp-fixed { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 100; display: flex; align-items: center; gap: 8px; }
 
         @media (max-width: 768px) { .benefits-bar { flex-direction: column; gap: 15px; align-items: center; } }
@@ -173,15 +117,13 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        
         <button class="dropdown-btn" onclick="toggleDropdown()">Nuestra Perfumería 🠻</button>
         <div class="dropdown-container" id="perfumeMenu">
             <a href="perfumeria-mujer.html">Fragancias Femeninas</a>
             <a href="perfumeria-hombre.html">Fragancias Masculinas</a>
             <a href="perfumeria-unisex.html">Fragancias Unisex</a>
         </div>
-
-        <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Deseo%20realizar%20una%20consulta%20sobre%20perfumes" target="_blank" style="color: #25d366; font-weight: bold; border-top: 1px solid #eee;">Contacto Directo</a>
+        <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Deseo%20realizar%20una%20consulta" target="_blank" style="color: #25d366; font-weight: bold; border-top: 1px solid #eee;">Contacto Directo</a>
     </div>
 
     <header>
@@ -190,112 +132,73 @@
     </header>
 
     <div class="benefits-bar">
-        <div class="benefit-item">
-            <span class="benefit-icon">🍀</span>
-            <span class="benefit-title">100% Vegano</span>
-        </div>
-        <div class="benefit-item">
-            <span class="benefit-icon">♻️</span>
-            <span class="benefit-title">Envases Sustentables</span>
-        </div>
-        <div class="benefit-item">
-            <span class="benefit-icon">🌎</span>
-            <span class="benefit-title">Carbono Neutro</span>
-        </div>
+        <div class="benefit-item"><span>🍀</span><span class="benefit-title">100% Vegano</span></div>
+        <div class="benefit-item"><span>♻️</span><span class="benefit-title">Envases Sustentables</span></div>
+        <div class="benefit-item"><span>🌎</span><span class="benefit-title">Carbono Neutro</span></div>
     </div>
 
     <div class="container">
-        
         <h2 class="section-title">Fragancias Femeninas</h2>
         <div class="grid">
             <div class="producto">
-                <div class="foto-container">
-                    <img src="https://images.unsplash.com/photo-1626784215021-2e39ccf971cd?auto=format&fit=crop&q=80&w=400" alt="Perfume Natura">
-                </div>
-                <div class="info">
-                    <h3>Perfume Kaiak Femenino</h3>
-                    <span class="precio">$28.900</span>
-                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Perfume%20Kaiak%20Femenino" class="btn-comprar" target="_blank">Pedir detalles</a>
-                </div>
+                <div class="foto-container"><img src="Body Splash Tododia Acerola e Hibisco 200 ml.jpg"></div>
+                <div class="info"><h3>Tododia Acerola e Hibisco</h3><span class="precio">$12.500</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Tododia%20Acerola" class="btn-comprar" target="_blank">Pedir detalles</a></div>
             </div>
-
             <div class="producto">
-                <div class="foto-container">
-                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Luna Natura">
-                </div>
-                <div class="info">
-                    <h3>Luna Radiante</h3>
-                    <span class="precio">$38.000</span>
-                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Perfume%20Luna%20Radiante" class="btn-comprar" target="_blank">Pedir detalles</a>
-                </div>
+                <div class="foto-container"><img src="Ekos Açaí Frescor EDT 150 ml.jpg"></div>
+                <div class="info"><h3>Ekos Açaí Frescor</h3><span class="precio">$22.300</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Ekos%20Açaí" class="btn-comprar" target="_blank">Pedir detalles</a></div>
+            </div>
+            <div class="producto">
+                <div class="foto-container"><img src="Ekos Maracuyá Frescor EDT 150 ml.jpg"></div>
+                <div class="info"><h3>Ekos Maracuyá Frescor</h3><span class="precio">$22.300</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Ekos%20Maracuyá" class="btn-comprar" target="_blank">Pedir detalles</a></div>
+            </div>
+            <div class="producto">
+                <div class="foto-container"><img src="Humor Próprio Femenino EDT Femenino 75 ml.jpg"></div>
+                <div class="info"><h3>Humor Próprio</h3><span class="precio">$24.800</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Humor%20Próprio" class="btn-comprar" target="_blank">Pedir detalles</a></div>
+            </div>
+            <div class="producto">
+                <div class="foto-container"><img src="Kaiak Clásico EDT Femenino 100 ml.jpg"></div>
+                <div class="info"><h3>Kaiak Clásico</h3><span class="precio">$32.500</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Clásico%20Fem" class="btn-comprar" target="_blank">Pedir detalles</a></div>
             </div>
         </div>
 
         <h2 class="section-title">Fragancias Masculinas</h2>
         <div class="grid">
             <div class="producto">
-                <div class="foto-container">
-                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Homen Potence">
-                </div>
-                <div class="info">
-                    <h3>Homen Potence</h3>
-                    <span class="precio">$41.500</span>
-                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Homen%20Potence" class="btn-comprar" target="_blank">Pedir detalles</a>
-                </div>
+                <div class="foto-container"><img src="Kaiak Aventura EDT Masculino 100 ml.jpg"></div>
+                <div class="info"><h3>Kaiak Aventura</h3><span class="precio">$32.500</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Aventura" class="btn-comprar" target="_blank">Pedir detalles</a></div>
             </div>
-
             <div class="producto">
-                <div class="foto-container">
-                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="K Max">
-                </div>
-                <div class="info">
-                    <h3>Perfume K Max Masculino</h3>
-                    <span class="precio">$42.300</span>
-                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Perfume%20K%20Max%20Masculino" class="btn-comprar" target="_blank">Pedir detalles</a>
-                </div>
+                <div class="foto-container"><img src="Kaiak Clásico EDT Masculino 100 ml.jpg"></div>
+                <div class="info"><h3>Kaiak Clásico</h3><span class="precio">$32.500</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Clásico" class="btn-comprar" target="_blank">Pedir detalles</a></div>
+            </div>
+            <div class="producto">
+                <div class="foto-container"><img src="Kaiak Urbe EDT Masculino 100 ml.jpg"></div>
+                <div class="info"><h3>Kaiak Urbe</h3><span class="precio">$32.500</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Urbe" class="btn-comprar" target="_blank">Pedir detalles</a></div>
             </div>
         </div>
 
         <h2 class="section-title">Fragancias Unisex</h2>
         <div class="grid">
             <div class="producto">
-                <div class="foto-container">
-                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Águas de Natura">
-                </div>
-                <div class="info">
-                    <h3>Águas Jabuticaba</h3>
-                    <span class="precio">$25.500</span>
-                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Águas%20Jabuticaba" class="btn-comprar" target="_blank">Pedir detalles</a>
-                </div>
+                <div class="foto-container"><img src="Ekos Ryo Festa EDT 75 ml.jpg"></div>
+                <div class="info"><h3>Ekos Ryo Festa</h3><span class="precio">$26.500</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Ekos%20Ryo" class="btn-comprar" target="_blank">Pedir detalles</a></div>
+            </div>
+            <div class="producto">
+                <div class="foto-container"><img src="Humor Transforma EDT 75 ml.jpg"></div>
+                <div class="info"><h3>Humor Transforma</h3><span class="precio">$24.800</span><a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Humor%20Transforma" class="btn-comprar" target="_blank">Pedir detalles</a></div>
             </div>
         </div>
-
     </div>
 
-    <footer>
-        <p>NATURA &copy; 2026 | Cintia Molina - Consultoría de Perfumería</p>
-    </footer>
+    <footer><p>NATURA &copy; 2026 | Cintia Molina - Consultoría de Perfumería</p></footer>
 
     <a href="https://wa.me/5493512832957" class="wsp-fixed" target="_blank">WHATSAPP💬</a>
 
     <script>
-        function openNav() { 
-            document.getElementById("mySidenav").style.width = "280px"; 
-        }
-        
-        function closeNav() { 
-            document.getElementById("mySidenav").style.width = "0"; 
-            document.getElementById("perfumeMenu").style.display = "none";
-        }
-
-        function toggleDropdown() {
-            var dropdown = document.getElementById("perfumeMenu");
-            if (dropdown.style.display === "block") {
-                dropdown.style.display = "none";
-            } else {
-                dropdown.style.display = "block";
-            }
-        }
+        function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; document.getElementById("perfumeMenu").style.display = "none"; }
+        function toggleDropdown() { var d = document.getElementById("perfumeMenu"); d.style.display = (d.style.display === "block") ? "none" : "block"; }
     </script>
 </body>
 </html>

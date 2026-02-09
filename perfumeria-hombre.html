@@ -68,43 +68,46 @@
 
         /* GRID PRODUCTOS */
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        
         .producto { 
-            border: 1px solid #eee; 
-            padding: 25px; 
-            text-align: center; 
-            border-radius: 12px; 
+            background-color: #fff;
+            border: 1px solid #f0f0f0; 
+            border-radius: 8px; 
+            overflow: hidden;
             transition: 0.3s;
+            text-align: center;
         }
-        .producto:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); transform: translateY(-5px); }
+        .producto:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.08); transform: translateY(-5px); }
         
-        .tag-hombre { 
-            background: #2c3e50; 
-            color: white; 
-            padding: 4px 12px; 
-            border-radius: 20px; 
-            font-size: 10px; 
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 15px;
+        .foto-container { 
+            width: 100%; 
+            height: 320px; 
+            background: #fff; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
         }
+        .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .producto img { width: 100%; height: 220px; object-fit: contain; margin-bottom: 15px; }
-        .producto h3 { font-size: 1.1rem; margin-bottom: 10px; color: #444; }
-        .precio { color: var(--natura-naranja); font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; display: block; }
+        .info { padding: 20px; border-top: 1px solid #f9f9f9; }
+        .info h3 { font-size: 1rem; margin-bottom: 10px; color: #444; height: 45px; display: flex; align-items: center; justify-content: center; }
+        .precio { font-size: 1.2rem; color: var(--natura-naranja); font-weight: bold; margin-bottom: 20px; display: block; }
         
-        .btn-ver {
+        .btn-comprar {
             display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #2c3e50;
-            color: #2c3e50;
+            padding: 12px 30px;
+            background-color: var(--natura-naranja);
+            color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-size: 12px;
             font-weight: bold;
+            text-transform: uppercase;
             transition: 0.3s;
         }
-        .btn-ver:hover { background: #2c3e50; color: white; transform: scale(1.05); }
+        .btn-comprar:hover { background-color: #e67600; transform: scale(1.05); }
 
         footer { text-align: center; padding: 40px; color: #bbb; font-size: 12px; border-top: 1px solid #eee; margin-top: 40px; }
     </style>
@@ -138,11 +141,58 @@
     <div class="container">
         <div class="grid">
             <div class="producto">
-                <span class="tag-hombre">AMADERADO</span>
-                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Homen Potence">
-                <h3>Homen Potence</h3>
-                <span class="precio">$41.500</span>
-                <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesó%20el%20producto%20Homen%20Potence" target="_blank" class="btn-ver">VER DETALLES</a>
+                <div class="foto-container">
+                    <img src="Kaiak Aventura EDT Masculino 100 ml.jpg" alt="Kaiak Aventura">
+                </div>
+                <div class="info">
+                    <h3>Kaiak Aventura</h3>
+                    <span class="precio">$32.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Aventura" class="btn-comprar" target="_blank">Pedir detalles</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="Kaiak Clásico EDT Masculino 100 ml.jpg" alt="Kaiak Clásico">
+                </div>
+                <div class="info">
+                    <h3>Kaiak Clásico</h3>
+                    <span class="precio">$32.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Clásico" class="btn-comprar" target="_blank">Pedir detalles</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="Kaiak Oceano EDT Masculino 100 ml.jpg" alt="Kaiak Oceano">
+                </div>
+                <div class="info">
+                    <h3>Kaiak Oceano</h3>
+                    <span class="precio">$32.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Oceano" class="btn-comprar" target="_blank">Pedir detalles</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="Kaiak Sonar EDT Masculino 100 ml.jpg" alt="Kaiak Sonar">
+                </div>
+                <div class="info">
+                    <h3>Kaiak Sonar</h3>
+                    <span class="precio">$32.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Sonar" class="btn-comprar" target="_blank">Pedir detalles</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="Kaiak Urbe EDT Masculino 100 ml.jpg" alt="Kaiak Urbe">
+                </div>
+                <div class="info">
+                    <h3>Kaiak Urbe</h3>
+                    <span class="precio">$32.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20Kaiak%20Urbe" class="btn-comprar" target="_blank">Pedir detalles</a>
+                </div>
             </div>
         </div>
     </div>
