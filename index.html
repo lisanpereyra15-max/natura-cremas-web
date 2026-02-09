@@ -126,11 +126,22 @@
         .benefit-icon { color: var(--natura-naranja); font-size: 18px; }
 
         /* PRODUCTOS */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; flex: 1; }
-        .section-title { margin-bottom: 40px; text-align: center; font-size: 1.8rem; color: var(--texto); font-weight: 300; position: relative; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--natura-naranja); margin: 10px auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px 20px 60px; flex: 1; }
+        
+        .section-title { 
+            margin-top: 40px;
+            margin-bottom: 30px; 
+            text-align: center; 
+            font-size: 1.8rem; 
+            color: var(--texto); 
+            font-weight: 300; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--natura-naranja); margin: 10px auto; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        
         .producto { background-color: var(--blanco); transition: 0.3s; border-radius: 8px; overflow: hidden; border: 1px solid #f0f0f0; }
         .producto:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.08); transform: translateY(-5px); }
 
@@ -165,7 +176,6 @@
         
         <button class="dropdown-btn" onclick="toggleDropdown()">Nuestra Perfumería 🠻</button>
         <div class="dropdown-container" id="perfumeMenu">
-            <a href="perfumeria-todos.html">Ver Todo el Catálogo</a>
             <a href="perfumeria-mujer.html">Fragancias Femeninas</a>
             <a href="perfumeria-hombre.html">Fragancias Masculinas</a>
             <a href="perfumeria-unisex.html">Fragancias Unisex</a>
@@ -195,7 +205,8 @@
     </div>
 
     <div class="container">
-        <h2 class="section-title">Fragancias Destacadas</h2>
+        
+        <h2 class="section-title">Fragancias Femeninas</h2>
         <div class="grid">
             <div class="producto">
                 <div class="foto-container">
@@ -210,12 +221,26 @@
 
             <div class="producto">
                 <div class="foto-container">
-                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Essencial Natura">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Luna Natura">
                 </div>
                 <div class="info">
-                    <h3>Essencial Exclusive Femenino</h3>
-                    <span class="precio">$45.000</span>
-                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Essencial%20Exclusive%20Femenino" class="btn-comprar" target="_blank">Pedir detalles</a>
+                    <h3>Luna Radiante</h3>
+                    <span class="precio">$38.000</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Perfume%20Luna%20Radiante" class="btn-comprar" target="_blank">Pedir detalles</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Fragancias Masculinas</h2>
+        <div class="grid">
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Homen Potence">
+                </div>
+                <div class="info">
+                    <h3>Homen Potence</h3>
+                    <span class="precio">$41.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Homen%20Potence" class="btn-comprar" target="_blank">Pedir detalles</a>
                 </div>
             </div>
 
@@ -230,6 +255,21 @@
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title">Fragancias Unisex</h2>
+        <div class="grid">
+            <div class="producto">
+                <div class="foto-container">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Águas de Natura">
+                </div>
+                <div class="info">
+                    <h3>Águas Jabuticaba</h3>
+                    <span class="precio">$25.500</span>
+                    <a href="https://wa.me/5493512832957?text=Hola%20Cintia!%20Me%20interesa%20el%20Águas%20Jabuticaba" class="btn-comprar" target="_blank">Pedir detalles</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <footer>
