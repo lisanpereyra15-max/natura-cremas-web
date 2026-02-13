@@ -42,7 +42,7 @@
             text-decoration: none; font-weight: 900;
         }
 
-        /* MENÚ DE BOTONES GRANDES (MUY FÁCIL DE USAR) */
+        /* MENÚ DE BOTONES GRANDES (MUY FÁCIL PARA PERSONAS MAYORES) */
         .main-nav {
             background: var(--natura-soft);
             padding: 15px 10px;
@@ -50,7 +50,7 @@
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 60px; /* Para que no lo tape la barra fija */
+            margin-top: 60px; 
         }
 
         .nav-btn {
@@ -84,6 +84,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            text-align: center;
         }
 
         /* ETIQUETA DE PROMOCIÓN */
@@ -104,27 +105,28 @@
         .foto-container { width: 100%; height: 300px; padding: 15px; display: flex; align-items: center; justify-content: center; }
         .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .info { padding: 15px; text-align: center; background: #fafafa; border-top: 1px solid #eee; flex-grow: 1; }
+        .info { padding: 15px; background: #fafafa; border-top: 1px solid #eee; flex-grow: 1; }
         .info h3 { font-size: 1.1rem; margin-bottom: 10px; color: #444; height: 50px; }
 
-        /* ESTILO DE PRECIOS */
+        /* PRECIOS */
         .precio-box { margin-bottom: 15px; }
         .precio-viejo { color: #888; text-decoration: line-through; font-size: 0.95rem; display: block; }
         .precio-nuevo { color: var(--oferta-rojo); font-size: 1.5rem; font-weight: 800; display: block; }
 
-        .btn-comprar { 
-            display: block; 
-            padding: 15px; 
-            background-color: #25d366; 
-            color: white; 
-            text-decoration: none; 
-            font-size: 14px; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            border-radius: 8px;
+        /* BOTÓN NARANJA ORIGINAL */
+        .btn-ver {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--natura-naranja);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
             transition: 0.3s;
         }
-        .btn-comprar:hover { background-color: #128c7e; transform: scale(1.02); }
+        .btn-ver:hover { background-color: #e67600; transform: scale(1.05); }
 
         footer { background-color: #333; text-align: center; padding: 40px 20px; color: #999; }
         .wsp-fixed { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
@@ -149,15 +151,15 @@
     <header>
         <img src="natura.png" alt="Natura" class="main-logo-img">
         <h2 style="font-weight: 300; color: #555;">Consultoría de Perfumería</h2>
-        <p style="color: #888; font-size: 0.9rem;">Río Cuarto, Córdoba</p>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">Ofertas para Ella</h2>
+        <h2 class="section-title">Nuestras Promociones</h2>
         <div class="grid">
+            
             <div class="producto">
-                <span class="tag-promo">OFERTA</span>
+                <span class="tag-promo">PROMO</span>
                 <div class="foto-container"><img src="Body Splash Tododia Acerola e Hibisco 200 ml.jpg"></div>
                 <div class="info">
                     <h3>Tododia Acerola e Hibisco</h3>
@@ -165,70 +167,25 @@
                         <span class="precio-viejo">$15.800</span>
                         <span class="precio-nuevo">$12.500</span>
                     </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20la%20OFERTA%20de%20Tododia%20Acerola" class="btn-comprar" target="_blank">Pedir por WhatsApp</a>
+                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Tododia%20Acerola" class="btn-ver" target="_blank">VER DETALLES</a>
                 </div>
             </div>
 
             <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Ekos Açaí Frescor EDT 150 ml.jpg"></div>
-                <div class="info">
-                    <h3>Ekos Açaí Frescor</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$28.400</span>
-                        <span class="precio-nuevo">$22.300</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20la%20OFERTA%20de%20Ekos%20Açaí" class="btn-comprar" target="_blank">Pedir por WhatsApp</a>
-                </div>
-            </div>
-            
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Kaiak Clásico EDT Femenino 100 ml.jpg"></div>
-                <div class="info">
-                    <h3>Kaiak Clásico Femenino</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$41.200</span>
-                        <span class="precio-nuevo">$32.500</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20la%20OFERTA%20de%20Kaiak%20Clásico" class="btn-comprar" target="_blank">Pedir por WhatsApp</a>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">Ofertas para Él</h2>
-        <div class="grid">
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
+                <span class="tag-promo">PROMO</span>
                 <div class="foto-container"><img src="Kaiak Aventura EDT Masculino 100 ml.jpg"></div>
                 <div class="info">
-                    <h3>Kaiak Aventura Masculino</h3>
+                    <h3>Kaiak Aventura</h3>
                     <div class="precio-box">
                         <span class="precio-viejo">$41.200</span>
                         <span class="precio-nuevo">$32.500</span>
                     </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20la%20OFERTA%20de%20Kaiak%20Aventura" class="btn-comprar" target="_blank">Pedir por WhatsApp</a>
+                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Kaiak%20Aventura" class="btn-ver" target="_blank">VER DETALLES</a>
                 </div>
             </div>
 
             <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Kaiak Urbe EDT Masculino 100 ml.jpg"></div>
-                <div class="info">
-                    <h3>Kaiak Urbe Masculino</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$41.200</span>
-                        <span class="precio-nuevo">$32.500</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20la%20OFERTA%20de%20Kaiak%20Urbe" class="btn-comprar" target="_blank">Pedir por WhatsApp</a>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">Línea Unisex</h2>
-        <div class="grid">
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
+                <span class="tag-promo">PROMO</span>
                 <div class="foto-container"><img src="Ekos Ryo Festa EDT 75 ml.jpg"></div>
                 <div class="info">
                     <h3>Ekos Ryo Festa</h3>
@@ -236,16 +193,15 @@
                         <span class="precio-viejo">$33.600</span>
                         <span class="precio-nuevo">$26.500</span>
                     </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20la%20OFERTA%20de%20Ekos%20Ryo" class="btn-comprar" target="_blank">Pedir por WhatsApp</a>
+                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Ekos%20Ryo" class="btn-ver" target="_blank">VER DETALLES</a>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 
     <footer>
         <p>NATURA &copy; 2026 | Cintia Molina</p>
-        <p style="font-size: 11px; margin-top: 10px;">Las promociones son válidas hasta agotar stock.</p>
     </footer>
 
     <a href="https://wa.me/5493586548493" class="wsp-fixed" target="_blank">💬</a>
