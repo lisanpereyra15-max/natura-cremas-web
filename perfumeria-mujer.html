@@ -18,7 +18,6 @@
 
         body { background: #fff; color: var(--texto); padding-top: 60px; }
 
-        /* BARRA SUPERIOR FIJA */
         .top-bar { 
             position: fixed; top: 0; width: 100%; 
             background-color: white; 
@@ -29,12 +28,8 @@
             z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .nav-logo-text { 
-            font-size: 1.6rem; color: var(--natura-naranja); 
-            text-decoration: none; font-weight: 900;
-        }
+        .nav-logo-text { font-size: 1.6rem; color: var(--natura-naranja); text-decoration: none; font-weight: 900; }
 
-        /* MENÚ DE 6 BOTONES ACTUALIZADO */
         .main-nav {
             background: var(--natura-soft);
             padding: 15px 10px;
@@ -62,7 +57,6 @@
         .nav-mujer { border-bottom: 2px solid var(--mujer-rosa); padding: 30px 20px; text-align: center; background: #fffafb; }
         .nav-mujer h1 { color: var(--mujer-texto); margin-bottom: 5px; font-weight: 300; }
 
-        /* GRID PRODUCTOS */
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         
@@ -74,6 +68,8 @@
             transition: 0.3s;
             text-align: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         
         .tag-oferta {
@@ -92,7 +88,7 @@
         .foto-container { width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .info { padding: 20px; border-top: 1px solid #f9f9f9; background: #fafafa; }
+        .info { padding: 20px; border-top: 1px solid #f9f9f9; background: #fafafa; flex-grow: 1; }
         .info h3 { font-size: 0.9rem; margin-bottom: 10px; color: #444; height: 45px; display: flex; align-items: center; justify-content: center; }
         
         .precio-box { margin-bottom: 15px; }
@@ -163,7 +159,202 @@
                 </div>
             </div>
 
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Ekos Cacao Frescor EDT 150 ml.jpg"></div>
+                <div class="info">
+                    <h3>Ekos Cacao Frescor</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$62.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Ekos%20Cacao" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
             </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Ekos Maracuyá Frescor EDT 150 ml.jpg"></div>
+                <div class="info">
+                    <h3>Ekos Maracuyá Frescor</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$62.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Ekos%20Maracuyá" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Ekos Pitanga Preta Frescor EDT 150 ml.jpg"></div>
+                <div class="info">
+                    <h3>Ekos Pitanga Preta</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$62.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Ekos%20Pitanga%20Preta" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Humor Beijo de Humor Femenino EDT Femenino 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Beijo de Humor</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.200</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Beijo%20de%20Humor" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Humor Meu Primeiro Humor Femenino EDT Femenino 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Meu Primero Humor</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.200</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Meu%20Primero%20Humor" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Humor Online Femenino 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Humor Online</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.200</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Humor%20Online" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Humor Próprio Femenino EDT Femenino 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Humor Próprio</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.200</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Humor%20Próprio" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Kaiak Clásico EDT Femenino 100 ml.jpg"></div>
+                <div class="info">
+                    <h3>Kaiak Clásico</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$62.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Kaiak%20Clásico" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Kaiak Oceano EDT Femenino 100 ml.jpg"></div>
+                <div class="info">
+                    <h3>Kaiak Oceano</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$62.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Kaiak%20Oceano" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Kaiak Sonar EDT Femenino 100 ml.jpg"></div>
+                <div class="info">
+                    <h3>Kaiak Sonar</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$62.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Kaiak%20Sonar" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Tododia Frambuesa y Pimienta Rosa Body Splash Femenino 200 ml.jpg"></div>
+                <div class="info">
+                    <h3>Frambuesa y Pimienta Rosa</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$29.600</span>
+                        <span class="precio-nuevo">$25.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Frambuesa" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Tododia Frutas Rojas Body Splash Femenino 200 ml.jpg"></div>
+                <div class="info">
+                    <h3>Frutas Rojas Body Splash</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$29.600</span>
+                        <span class="precio-nuevo">$25.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Frutas%20Rojas" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Tododia Hojas de Limón y Guanábana Body Splash Femenino 200 ml.jpg"></div>
+                <div class="info">
+                    <h3>Limón y Guanábana</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$29.600</span>
+                        <span class="precio-nuevo">$25.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Limón" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Tododia Mora Roja y Jabuticaba Body Splash Femenino 200 ml.jpg"></div>
+                <div class="info">
+                    <h3>Mora Roja y Jabuticaba</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$29.600</span>
+                        <span class="precio-nuevo">$25.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Mora%20Roja" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Tododia Té de Manzanilla y Lavanda Femenino Body Splash 200 ml.jpg"></div>
+                <div class="info">
+                    <h3>Manzanilla y Lavanda</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$29.600</span>
+                        <span class="precio-nuevo">$25.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Me%20interesa%20Manzanilla" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <footer>
