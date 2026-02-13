@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cintia Molina | Natura</title>
+    <title>Cintia Molina | Natura Río Cuarto</title>
     <style>
         :root { 
             --natura-naranja: #f48312; 
-            --natura-soft: #fff3e6; 
-            --texto: #333; 
+            --natura-soft: #fff3e6;
+            --texto: #333;
             --oferta-rojo: #e63946;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-        body { background: #fff; color: var(--texto); padding-top: 60px; }
+        body { background-color: #fff; color: var(--texto); padding-top: 60px; }
 
-        /* BARRA SUPERIOR */
         .top-bar { 
             position: fixed; top: 0; width: 100%; 
             background-color: white; 
@@ -29,7 +28,7 @@
 
         .nav-logo-text { font-size: 1.6rem; color: var(--natura-naranja); text-decoration: none; font-weight: 900; }
 
-        /* NUEVO MENÚ DE 6 BOTONES */
+        /* MENÚ DE 6 BOTONES */
         .main-nav {
             background: var(--natura-soft);
             padding: 15px 10px;
@@ -49,57 +48,43 @@
             font-weight: bold;
             border: 2px solid var(--natura-naranja);
             font-size: 13px;
-            transition: 0.3s;
         }
 
         .nav-btn:hover { background: var(--natura-naranja); color: white; }
 
-        /* HERO SECTION */
-        .hero { 
-            text-align: center; 
-            padding: 60px 20px; 
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://www.natura.com.ar/static/media/background.jpg');
-            background-size: cover;
-        }
-        .hero h1 { font-size: 2.5rem; color: var(--natura-naranja); margin-bottom: 10px; }
-        .hero p { font-size: 1.1rem; color: #666; }
+        header { text-align: center; padding: 30px 20px; }
+        .main-logo-img { width: 100px; height: auto; border-radius: 50%; margin-bottom: 10px; }
 
-        /* GRID PRODUCTOS DESTACADOS */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .section-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: var(--texto); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .section-title { margin-top: 40px; margin-bottom: 20px; text-align: center; font-size: 1.5rem; color: var(--natura-naranja); text-transform: uppercase; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         
         .producto { 
-            background-color: #fff;
-            border: 1px solid #eee; 
+            background-color: #fff; 
             border-radius: 12px; 
-            overflow: hidden;
-            transition: 0.3s;
-            text-align: center;
+            overflow: hidden; 
+            border: 1px solid #ddd; 
             position: relative;
-        }
-        
-        .tag-oferta {
-            position: absolute;
-            top: 10px; left: 10px;
-            background: var(--oferta-rojo);
-            color: white;
-            padding: 4px 10px;
-            font-weight: bold;
-            border-radius: 4px;
-            font-size: 12px;
+            text-align: center;
         }
 
-        .foto-container { width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; padding: 15px; }
+        .tag-oferta {
+            position: absolute; top: 10px; left: 10px;
+            background: var(--oferta-rojo); color: white;
+            padding: 5px 12px; font-weight: bold; border-radius: 5px; font-size: 12px;
+        }
+
+        .foto-container { width: 100%; height: 280px; padding: 15px; display: flex; align-items: center; justify-content: center; }
         .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .info { padding: 20px; background: #fafafa; }
-        .info h3 { font-size: 0.85rem; margin-bottom: 10px; color: #444; height: 40px; display: flex; align-items: center; justify-content: center; }
-        
+        .info { padding: 15px; background: #fafafa; border-top: 1px solid #eee; }
+        .info h3 { font-size: 0.95rem; margin-bottom: 10px; color: #444; height: 40px; }
+
         .precio-box { margin-bottom: 15px; }
-        .precio-viejo { color: #888; text-decoration: line-through; font-size: 0.8rem; display: block; }
-        .precio-nuevo { color: var(--texto); font-size: 1.3rem; font-weight: 700; display: block; }
-        .precio-oferta { color: var(--oferta-rojo); font-size: 1.3rem; font-weight: 700; display: block; }
+        .precio-viejo { color: #888; text-decoration: line-through; font-size: 0.85rem; display: block; }
+        .precio-nuevo { color: var(--texto); font-size: 1.3rem; font-weight: 800; display: block; }
+        .precio-oferta { color: var(--oferta-rojo); font-size: 1.3rem; font-weight: 800; display: block; }
 
         .btn-ver {
             display: inline-block;
@@ -112,7 +97,7 @@
             font-weight: bold;
         }
 
-        footer { text-align: center; padding: 40px; color: #bbb; font-size: 12px; background: #f9f9f9; margin-top: 40px; }
+        footer { background-color: #333; text-align: center; padding: 30px; color: #999; margin-top: 50px; }
         .wsp-fixed { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 1000; }
     </style>
 </head>
@@ -131,66 +116,105 @@
         <a href="cabello.html" class="nav-btn">💇 CABELLO</a>
     </nav>
 
-    <div class="hero">
-        <h1>Bienvenida a tu Consultora Natura</h1>
-        <p>Encuentra tus productos favoritos con las mejores ofertas del ciclo.</p>
-    </div>
+    <header>
+        <img src="natura.png" alt="Natura" class="main-logo-img">
+        <h2 style="font-weight: 300; color: #555;">Consultoría Río Cuarto</h2>
+    </header>
 
     <div class="container">
-        <h2 class="section-title">Productos Destacados</h2>
+        
+        <h2 class="section-title">Perfumería Destacada</h2>
         <div class="grid">
-            
             <div class="producto">
                 <span class="tag-oferta">OFERTA</span>
-                <div class="foto-container"><img src="Humor Meu Primeiro Humor Femenino EDT Femenino 75 ml.jpg"></div>
+                <div class="foto-container"><img src="Kaiak Aventura EDT Masculino 100 ml.jpg"></div>
                 <div class="info">
-                    <h3>Meu Primeiro Humor</h3>
+                    <h3>Kaiak Aventura Masculino</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.800</span>
+                        <span class="precio-oferta">$40.000</span>
+                    </div>
+                    <a href="perfumeria-hombre.html" class="btn-ver">VER MÁS</a>
+                </div>
+            </div>
+            <div class="producto">
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Humor Próprio Femenino EDT Femenino 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Humor Próprio Femenino</h3>
                     <div class="precio-box">
                         <span class="precio-viejo">$60.200</span>
                         <span class="precio-oferta">$40.000</span>
                     </div>
-                    <a href="perfumeria-mujer.html" class="btn-ver">VER CATEGORÍA</a>
+                    <a href="perfumeria-mujer.html" class="btn-ver">VER MÁS</a>
                 </div>
             </div>
+        </div>
 
+        <h2 class="section-title">Cremas y Manos</h2>
+        <div class="grid">
             <div class="producto">
                 <div class="foto-container"><img src="Crema Hidratante para Manos Ekos Castaña 75 g.jpg"></div>
                 <div class="info">
                     <h3>Pulpa para Manos Castaña</h3>
-                    <div class="precio-box">
-                        <span class="precio-nuevo">$12.000</span>
-                    </div>
-                    <a href="cremas.html" class="btn-ver">VER CREMAS</a>
+                    <div class="precio-box"><span class="precio-nuevo">$12.000</span></div>
+                    <a href="cremas.html" class="btn-ver">VER MÁS</a>
                 </div>
             </div>
-
             <div class="producto">
-                <div class="foto-container"><img src="Shampoo Anticaída Homem 300 ml.jpg"></div>
+                <div class="foto-container"><img src="Crema Hidratante para Manos Ekos Cacao 75 g.jpg"></div>
                 <div class="info">
-                    <h3>Shampoo Anticaída Homem</h3>
-                    <div class="precio-box">
-                        <span class="precio-nuevo">$10.200</span>
-                    </div>
-                    <a href="cabello.html" class="btn-ver">VER CABELLO</a>
+                    <h3>Pulpa para Manos Cacao</h3>
+                    <div class="precio-box"><span class="precio-nuevo">$12.000</span></div>
+                    <a href="cremas.html" class="btn-ver">VER MÁS</a>
                 </div>
             </div>
+        </div>
 
+        <h2 class="section-title">Cuidado Capilar</h2>
+        <div class="grid">
+            <div class="producto">
+                <div class="foto-container"><img src="Shampoo 2 en 1 Homem 300 ml.jpg"></div>
+                <div class="info">
+                    <h3>Shampoo 2 en 1 Homem</h3>
+                    <div class="precio-box"><span class="precio-nuevo">$10.200</span></div>
+                    <a href="cabello.html" class="btn-ver">VER MÁS</a>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="foto-container"><img src="Shampoo Tododia Hidratante Manzana Verde y Aloe Vera 300 ml.jpg"></div>
+                <div class="info">
+                    <h3>Shampoo Manzana Verde</h3>
+                    <div class="precio-box"><span class="precio-nuevo">$10.000</span></div>
+                    <a href="cabello.html" class="btn-ver">VER MÁS</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Desodorantes</h2>
+        <div class="grid">
             <div class="producto">
                 <div class="foto-container"><img src="Desodorante Antitranspirante Roll On Erva Doce 70 ml.jpg"></div>
                 <div class="info">
                     <h3>Roll On Erva Doce</h3>
-                    <div class="precio-box">
-                        <span class="precio-nuevo">$5.800</span>
-                    </div>
-                    <a href="desodorantes.html" class="btn-ver">VER DESODORANTES</a>
+                    <div class="precio-box"><span class="precio-nuevo">$5.800</span></div>
+                    <a href="desodorantes.html" class="btn-ver">VER MÁS</a>
                 </div>
             </div>
-
+            <div class="producto">
+                <div class="foto-container"><img src="Desodorante Antitranspirante Roll On Homem Clásico 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Roll On Homem Clásico</h3>
+                    <div class="precio-box"><span class="precio-nuevo">$5.800</span></div>
+                    <a href="desodorantes.html" class="btn-ver">VER MÁS</a>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <footer>
-        <p>NATURA &copy; 2026 | Cintia Molina</p>
+        <p>NATURA &copy; 2026 | Río Cuarto, Córdoba</p>
     </footer>
 
     <a href="https://wa.me/5493586548493" class="wsp-fixed" target="_blank">💬</a>
