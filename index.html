@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cintia Molina | Natura Río Cuarto</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
     <style>
         :root { 
             --natura-naranja: #f48312; 
@@ -16,6 +19,7 @@
 
         body { background-color: #fff; color: var(--texto); padding-top: 60px; }
 
+        /* BARRA SUPERIOR FIJA */
         .top-bar { 
             position: fixed; top: 0; width: 100%; 
             background-color: white; 
@@ -28,7 +32,7 @@
 
         .nav-logo-text { font-size: 1.6rem; color: var(--natura-naranja); text-decoration: none; font-weight: 900; }
 
-        /* MENÚ DE 6 BOTONES */
+        /* MENÚ CON RAMITAS */
         .main-nav {
             background: var(--natura-soft);
             padding: 15px 10px;
@@ -48,17 +52,33 @@
             font-weight: bold;
             border: 2px solid var(--natura-naranja);
             font-size: 13px;
+            transition: 0.3s;
         }
 
         .nav-btn:hover { background: var(--natura-naranja); color: white; }
 
-        header { text-align: center; padding: 30px 20px; }
-        .main-logo-img { width: 100px; height: auto; border-radius: 50%; margin-bottom: 10px; }
+        /* HEADER CON LOGO Y CIUDAD */
+        header { text-align: center; padding: 30px 20px 10px; }
+        .main-logo-img { width: 120px; height: auto; border-radius: 50%; margin-bottom: 10px; }
+        .consultoria-text { font-weight: 300; color: #555; font-size: 1.2rem; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .section-title { margin-top: 40px; margin-bottom: 20px; text-align: center; font-size: 1.5rem; color: var(--natura-naranja); text-transform: uppercase; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 10px 20px 60px; }
+        
+        /* TÍTULOS DE SUBDIVISIÓN */
+        .section-title { 
+            margin-top: 40px; 
+            margin-bottom: 25px; 
+            text-align: center; 
+            font-size: 1.6rem; 
+            color: var(--natura-naranja); 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .section-title::after {
+            content: ''; display: block; width: 50px; height: 3px; background: var(--natura-naranja); margin: 10px auto;
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         
         .producto { 
             background-color: #fff; 
@@ -66,39 +86,45 @@
             overflow: hidden; 
             border: 1px solid #ddd; 
             position: relative;
+            display: flex;
+            flex-direction: column;
             text-align: center;
+            transition: 0.3s;
         }
+        .producto:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
         .tag-oferta {
-            position: absolute; top: 10px; left: 10px;
+            position: absolute; top: 15px; left: 15px;
             background: var(--oferta-rojo); color: white;
-            padding: 5px 12px; font-weight: bold; border-radius: 5px; font-size: 12px;
+            padding: 5px 15px; font-weight: bold; border-radius: 5px; font-size: 14px;
+            z-index: 10;
         }
 
-        .foto-container { width: 100%; height: 280px; padding: 15px; display: flex; align-items: center; justify-content: center; }
+        .foto-container { width: 100%; height: 300px; padding: 15px; display: flex; align-items: center; justify-content: center; }
         .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .info { padding: 15px; background: #fafafa; border-top: 1px solid #eee; }
-        .info h3 { font-size: 0.95rem; margin-bottom: 10px; color: #444; height: 40px; }
+        .info { padding: 15px; background: #fafafa; border-top: 1px solid #eee; flex-grow: 1; }
+        .info h3 { font-size: 1rem; margin-bottom: 10px; color: #444; height: 45px; display: flex; align-items: center; justify-content: center; }
 
         .precio-box { margin-bottom: 15px; }
-        .precio-viejo { color: #888; text-decoration: line-through; font-size: 0.85rem; display: block; }
-        .precio-nuevo { color: var(--texto); font-size: 1.3rem; font-weight: 800; display: block; }
-        .precio-oferta { color: var(--oferta-rojo); font-size: 1.3rem; font-weight: 800; display: block; }
+        .precio-viejo { color: #888; text-decoration: line-through; font-size: 0.95rem; display: block; }
+        .precio-nuevo { color: var(--texto); font-size: 1.4rem; font-weight: 800; display: block; }
+        .precio-oferta { color: var(--oferta-rojo); font-size: 1.5rem; font-weight: 800; display: block; }
 
         .btn-ver {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: var(--natura-naranja);
             color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
-        footer { background-color: #333; text-align: center; padding: 30px; color: #999; margin-top: 50px; }
-        .wsp-fixed { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 1000; }
+        footer { background-color: #333; text-align: center; padding: 40px 20px; color: #999; }
+        .wsp-fixed { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
     </style>
 </head>
 <body>
@@ -118,12 +144,12 @@
 
     <header>
         <img src="natura.png" alt="Natura" class="main-logo-img">
-        <h2 style="font-weight: 300; color: #555;">Consultoría Río Cuarto</h2>
+        <h2 class="consultoria-text">Consultoría Río Cuarto</h2>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">Perfumería Destacada</h2>
+        <h2 class="section-title">Perfumería</h2>
         <div class="grid">
             <div class="producto">
                 <span class="tag-oferta">OFERTA</span>
@@ -134,7 +160,7 @@
                         <span class="precio-viejo">$60.800</span>
                         <span class="precio-oferta">$40.000</span>
                     </div>
-                    <a href="perfumeria-hombre.html" class="btn-ver">VER MÁS</a>
+                    <a href="perfumeria-hombre.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
             <div class="producto">
@@ -146,19 +172,19 @@
                         <span class="precio-viejo">$60.200</span>
                         <span class="precio-oferta">$40.000</span>
                     </div>
-                    <a href="perfumeria-mujer.html" class="btn-ver">VER MÁS</a>
+                    <a href="perfumeria-mujer.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Cremas y Manos</h2>
+        <h2 class="section-title">Cremas e Hidratación</h2>
         <div class="grid">
             <div class="producto">
                 <div class="foto-container"><img src="Crema Hidratante para Manos Ekos Castaña 75 g.jpg"></div>
                 <div class="info">
                     <h3>Pulpa para Manos Castaña</h3>
                     <div class="precio-box"><span class="precio-nuevo">$12.000</span></div>
-                    <a href="cremas.html" class="btn-ver">VER MÁS</a>
+                    <a href="cremas.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
             <div class="producto">
@@ -166,19 +192,19 @@
                 <div class="info">
                     <h3>Pulpa para Manos Cacao</h3>
                     <div class="precio-box"><span class="precio-nuevo">$12.000</span></div>
-                    <a href="cremas.html" class="btn-ver">VER MÁS</a>
+                    <a href="cremas.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Cuidado Capilar</h2>
+        <h2 class="section-title">Cabello</h2>
         <div class="grid">
             <div class="producto">
-                <div class="foto-container"><img src="Shampoo 2 en 1 Homem 300 ml.jpg"></div>
+                <div class="foto-container"><img src="Shampoo Anticaída Homem 300 ml.jpg"></div>
                 <div class="info">
-                    <h3>Shampoo 2 en 1 Homem</h3>
+                    <h3>Shampoo Anticaída Homem</h3>
                     <div class="precio-box"><span class="precio-nuevo">$10.200</span></div>
-                    <a href="cabello.html" class="btn-ver">VER MÁS</a>
+                    <a href="cabello.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
             <div class="producto">
@@ -186,7 +212,7 @@
                 <div class="info">
                     <h3>Shampoo Manzana Verde</h3>
                     <div class="precio-box"><span class="precio-nuevo">$10.000</span></div>
-                    <a href="cabello.html" class="btn-ver">VER MÁS</a>
+                    <a href="cabello.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
         </div>
@@ -198,7 +224,7 @@
                 <div class="info">
                     <h3>Roll On Erva Doce</h3>
                     <div class="precio-box"><span class="precio-nuevo">$5.800</span></div>
-                    <a href="desodorantes.html" class="btn-ver">VER MÁS</a>
+                    <a href="desodorantes.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
             <div class="producto">
@@ -206,7 +232,7 @@
                 <div class="info">
                     <h3>Roll On Homem Clásico</h3>
                     <div class="precio-box"><span class="precio-nuevo">$5.800</span></div>
-                    <a href="desodorantes.html" class="btn-ver">VER MÁS</a>
+                    <a href="desodorantes.html" class="btn-ver">VER TODO</a>
                 </div>
             </div>
         </div>
