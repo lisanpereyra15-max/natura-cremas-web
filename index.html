@@ -3,30 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cintia Molina | Perfumería Natura</title>
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
-
+    <title>Cintia Molina | Natura</title>
     <style>
         :root { 
             --natura-naranja: #f48312; 
-            --natura-soft: #fff3e6;
-            --texto: #333;
-            --blanco: #ffffff;
+            --natura-soft: #fff3e6; 
+            --texto: #333; 
             --oferta-rojo: #e63946;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-        body { 
-            background-color: var(--blanco); 
-            color: var(--texto); 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh;
-        }
+        body { background: #fff; color: var(--texto); padding-top: 60px; }
 
-        /* BARRA SUPERIOR FIJA */
+        /* BARRA SUPERIOR */
         .top-bar { 
             position: fixed; top: 0; width: 100%; 
             background-color: white; 
@@ -37,18 +27,15 @@
             z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .nav-logo-text { 
-            font-size: 1.6rem; color: var(--natura-naranja); 
-            text-decoration: none; font-weight: 900;
-        }
+        .nav-logo-text { font-size: 1.6rem; color: var(--natura-naranja); text-decoration: none; font-weight: 900; }
 
-        /* MENÚ DE BOTONES GRANDES */
+        /* NUEVO MENÚ DE 6 BOTONES */
         .main-nav {
             background: var(--natura-soft);
             padding: 15px 10px;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
             margin-top: 60px; 
         }
@@ -56,84 +43,77 @@
         .nav-btn {
             background: white;
             color: var(--texto);
-            padding: 12px 20px;
+            padding: 10px 15px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
             border: 2px solid var(--natura-naranja);
-            font-size: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 13px;
+            transition: 0.3s;
         }
 
         .nav-btn:hover { background: var(--natura-naranja); color: white; }
 
-        header { text-align: center; padding: 30px 20px 10px; }
-        .main-logo-img { width: 120px; height: auto; border-radius: 50%; margin-bottom: 10px; }
+        /* HERO SECTION */
+        .hero { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://www.natura.com.ar/static/media/background.jpg');
+            background-size: cover;
+        }
+        .hero h1 { font-size: 2.5rem; color: var(--natura-naranja); margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; color: #666; }
 
-        /* PRODUCTOS CON OFERTA */
-        .container { max-width: 1200px; margin: 0 auto; padding: 10px 20px 60px; }
-        .section-title { margin-top: 40px; margin-bottom: 25px; text-align: center; font-size: 1.6rem; color: var(--natura-naranja); text-transform: uppercase; letter-spacing: 1px; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--natura-naranja); margin: 10px auto; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* GRID PRODUCTOS DESTACADOS */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: var(--texto); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         
         .producto { 
-            background-color: var(--blanco); 
+            background-color: #fff;
+            border: 1px solid #eee; 
             border-radius: 12px; 
-            overflow: hidden; 
-            border: 1px solid #ddd; 
-            position: relative;
-            display: flex;
-            flex-direction: column;
+            overflow: hidden;
+            transition: 0.3s;
             text-align: center;
+            position: relative;
         }
-
-        /* ETIQUETA DE OFERTA */
-        .tag-promo {
+        
+        .tag-oferta {
             position: absolute;
-            top: 15px;
-            left: 15px;
+            top: 10px; left: 10px;
             background: var(--oferta-rojo);
             color: white;
-            padding: 5px 15px;
+            padding: 4px 10px;
             font-weight: bold;
-            border-radius: 5px;
-            font-size: 14px;
-            z-index: 10;
+            border-radius: 4px;
+            font-size: 12px;
         }
 
-        .foto-container { width: 100%; height: 300px; padding: 15px; display: flex; align-items: center; justify-content: center; }
+        .foto-container { width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; padding: 15px; }
         .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .info { padding: 15px; background: #fafafa; border-top: 1px solid #eee; flex-grow: 1; }
-        .info h3 { font-size: 1rem; margin-bottom: 10px; color: #444; height: 45px; display: flex; align-items: center; justify-content: center; }
-
-        /* PRECIOS */
+        .info { padding: 20px; background: #fafafa; }
+        .info h3 { font-size: 0.85rem; margin-bottom: 10px; color: #444; height: 40px; display: flex; align-items: center; justify-content: center; }
+        
         .precio-box { margin-bottom: 15px; }
-        .precio-viejo { color: #888; text-decoration: line-through; font-size: 0.95rem; display: block; }
-        .precio-nuevo { color: var(--oferta-rojo); font-size: 1.5rem; font-weight: 800; display: block; }
+        .precio-viejo { color: #888; text-decoration: line-through; font-size: 0.8rem; display: block; }
+        .precio-nuevo { color: var(--texto); font-size: 1.3rem; font-weight: 700; display: block; }
+        .precio-oferta { color: var(--oferta-rojo); font-size: 1.3rem; font-weight: 700; display: block; }
 
-        /* BOTÓN NARANJA ORIGINAL */
         .btn-ver {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 10px 20px;
             background-color: var(--natura-naranja);
             color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
         }
-        .btn-ver:hover { background-color: #e67600; transform: scale(1.05); }
 
-        footer { background-color: #333; text-align: center; padding: 40px 20px; color: #999; margin-top: auto; }
-        .wsp-fixed { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
-
-        @media (max-width: 600px) {
-            .nav-btn { width: 45%; text-align: center; padding: 10px; font-size: 14px; }
-        }
+        footer { text-align: center; padding: 40px; color: #bbb; font-size: 12px; background: #f9f9f9; margin-top: 40px; }
+        .wsp-fixed { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 1000; }
     </style>
 </head>
 <body>
@@ -145,116 +125,68 @@
     <nav class="main-nav">
         <a href="perfumeria-mujer.html" class="nav-btn">👩 MUJER</a>
         <a href="perfumeria-hombre.html" class="nav-btn">👨 HOMBRE</a>
-        <a href="perfumeria-unisex.html" class="nav-btn">👨👩 UNISEX</a>
+        <a href="perfumeria-unisex.html" class="nav-btn">🌈 UNISEX</a>
+        <a href="cremas.html" class="nav-btn">🧴 CREMAS</a>
+        <a href="desodorantes.html" class="nav-btn">✨ DESODORANTES</a>
+        <a href="cabello.html" class="nav-btn">💇 CABELLO</a>
     </nav>
 
-    <header>
-        <img src="natura.png" alt="Natura" class="main-logo-img">
-        <h2 style="font-weight: 300; color: #555;">Rio Cuarto</h2>
-    </header>
+    <div class="hero">
+        <h1>Bienvenida a tu Consultora Natura</h1>
+        <p>Encuentra tus productos favoritos con las mejores ofertas del ciclo.</p>
+    </div>
 
     <div class="container">
-        
-        <h2 class="section-title">Fragancias Femeninas</h2>
+        <h2 class="section-title">Productos Destacados</h2>
         <div class="grid">
+            
             <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Body Splash Tododia Acerola e Hibisco 200 ml.jpg"></div>
+                <span class="tag-oferta">OFERTA</span>
+                <div class="foto-container"><img src="Humor Meu Primeiro Humor Femenino EDT Femenino 75 ml.jpg"></div>
                 <div class="info">
-                    <h3>Tododia Acerola e Hibisco</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$29.600</span>
-                        <span class="precio-nuevo">$25.000</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Tododia%20Acerola" class="btn-ver" target="_blank">VER DETALLES</a>
-                </div>
-            </div>
-
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Humor Próprio Femenino EDT Femenino 75 ml.jpg"></div>
-                <div class="info">
-                    <h3>Humor Próprio</h3>
+                    <h3>Meu Primeiro Humor</h3>
                     <div class="precio-box">
                         <span class="precio-viejo">$60.200</span>
-                        <span class="precio-nuevo">$40.000</span>
+                        <span class="precio-oferta">$40.000</span>
                     </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Humor%20Próprio" class="btn-ver" target="_blank">VER DETALLES</a>
+                    <a href="perfumeria-mujer.html" class="btn-ver">VER CATEGORÍA</a>
                 </div>
             </div>
 
             <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Kaiak Clásico EDT Femenino 100 ml.jpg"></div>
+                <div class="foto-container"><img src="Crema Hidratante para Manos Ekos Castaña 75 g.jpg"></div>
                 <div class="info">
-                    <h3>Kaiak Clásico Femenino</h3>
+                    <h3>Pulpa para Manos Castaña</h3>
                     <div class="precio-box">
-                        <span class="precio-viejo">$62.800</span>
-                        <span class="precio-nuevo">$40.000</span>
+                        <span class="precio-nuevo">$12.000</span>
                     </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Kaiak%20Clásico%20Fem" class="btn-ver" target="_blank">VER DETALLES</a>
+                    <a href="cremas.html" class="btn-ver">VER CREMAS</a>
                 </div>
             </div>
+
+            <div class="producto">
+                <div class="foto-container"><img src="Shampoo Anticaída Homem 300 ml.jpg"></div>
+                <div class="info">
+                    <h3>Shampoo Anticaída Homem</h3>
+                    <div class="precio-box">
+                        <span class="precio-nuevo">$10.200</span>
+                    </div>
+                    <a href="cabello.html" class="btn-ver">VER CABELLO</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <div class="foto-container"><img src="Desodorante Antitranspirante Roll On Erva Doce 70 ml.jpg"></div>
+                <div class="info">
+                    <h3>Roll On Erva Doce</h3>
+                    <div class="precio-box">
+                        <span class="precio-nuevo">$5.800</span>
+                    </div>
+                    <a href="desodorantes.html" class="btn-ver">VER DESODORANTES</a>
+                </div>
+            </div>
+
         </div>
-
-        <h2 class="section-title">Fragancias Masculinas</h2>
-        <div class="grid">
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Kaiak Aventura EDT Masculino 100 ml.jpg"></div>
-                <div class="info">
-                    <h3>Kaiak Aventura</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$60.800</span>
-                        <span class="precio-nuevo">$40.000</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Kaiak%20Aventura" class="btn-ver" target="_blank">VER DETALLES</a>
-                </div>
-            </div>
-
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Kaiak Clásico EDT Masculino 100 ml.jpg"></div>
-                <div class="info">
-                    <h3>Kaiak Clásico</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$60.800</span>
-                        <span class="precio-nuevo">$40.000</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Kaiak%20Clásico" class="btn-ver" target="_blank">VER DETALLES</a>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">Fragancias Unisex</h2>
-        <div class="grid">
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Ekos Ryo Festa EDT 75 ml.jpg"></div>
-                <div class="info">
-                    <h3>Ekos Ryo Festa</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$73.800</span>
-                        <span class="precio-nuevo">$40.000</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Ekos%20Ryo" class="btn-ver" target="_blank">VER DETALLES</a>
-                </div>
-            </div>
-
-            <div class="producto">
-                <span class="tag-promo">OFERTA</span>
-                <div class="foto-container"><img src="Humor Transforma EDT 75 ml.jpg"></div>
-                <div class="info">
-                    <h3>Humor Transforma</h3>
-                    <div class="precio-box">
-                        <span class="precio-viejo">$60.200</span>
-                        <span class="precio-nuevo">$40.000</span>
-                    </div>
-                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Humor%20Transforma" class="btn-ver" target="_blank">VER DETALLES</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <footer>
@@ -264,5 +196,4 @@
     <a href="https://wa.me/5493586548493" class="wsp-fixed" target="_blank">💬</a>
 
 </body>
-
 </html>
