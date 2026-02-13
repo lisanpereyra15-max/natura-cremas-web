@@ -42,7 +42,7 @@
             text-decoration: none; font-weight: 900;
         }
 
-        /* MENÚ DE BOTONES GRANDES (MUY FÁCIL PARA PERSONAS MAYORES) */
+        /* MENÚ DE BOTONES GRANDES */
         .main-nav {
             background: var(--natura-soft);
             padding: 15px 10px;
@@ -72,7 +72,8 @@
 
         /* PRODUCTOS CON OFERTA */
         .container { max-width: 1200px; margin: 0 auto; padding: 10px 20px 60px; }
-        .section-title { margin-top: 30px; margin-bottom: 25px; text-align: center; font-size: 1.6rem; color: var(--natura-naranja); text-transform: uppercase; letter-spacing: 1px; }
+        .section-title { margin-top: 40px; margin-bottom: 25px; text-align: center; font-size: 1.6rem; color: var(--natura-naranja); text-transform: uppercase; letter-spacing: 1px; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--natura-naranja); margin: 10px auto; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         
@@ -87,7 +88,7 @@
             text-align: center;
         }
 
-        /* ETIQUETA DE PROMOCIÓN */
+        /* ETIQUETA DE OFERTA */
         .tag-promo {
             position: absolute;
             top: 15px;
@@ -99,14 +100,13 @@
             border-radius: 5px;
             font-size: 14px;
             z-index: 10;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .foto-container { width: 100%; height: 300px; padding: 15px; display: flex; align-items: center; justify-content: center; }
         .foto-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
         .info { padding: 15px; background: #fafafa; border-top: 1px solid #eee; flex-grow: 1; }
-        .info h3 { font-size: 1.1rem; margin-bottom: 10px; color: #444; height: 50px; }
+        .info h3 { font-size: 1rem; margin-bottom: 10px; color: #444; height: 45px; display: flex; align-items: center; justify-content: center; }
 
         /* PRECIOS */
         .precio-box { margin-bottom: 15px; }
@@ -128,7 +128,7 @@
         }
         .btn-ver:hover { background-color: #e67600; transform: scale(1.05); }
 
-        footer { background-color: #333; text-align: center; padding: 40px 20px; color: #999; }
+        footer { background-color: #333; text-align: center; padding: 40px 20px; color: #999; margin-top: auto; }
         .wsp-fixed { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
 
         @media (max-width: 600px) {
@@ -145,7 +145,7 @@
     <nav class="main-nav">
         <a href="perfumeria-mujer.html" class="nav-btn">👩 MUJER</a>
         <a href="perfumeria-hombre.html" class="nav-btn">👨 HOMBRE</a>
-        <a href="perfumeria-unisex.html" class="nav-btn">🌈 UNISEX</a>
+        <a href="perfumeria-unisex.html" class="nav-btn">👨👩 UNISEX</a>
     </nav>
 
     <header>
@@ -155,49 +155,106 @@
 
     <div class="container">
         
-        <h2 class="section-title">Nuestras Promociones</h2>
+        <h2 class="section-title">Fragancias Femeninas</h2>
         <div class="grid">
-            
             <div class="producto">
-                <span class="tag-promo">PROMO</span>
+                <span class="tag-promo">OFERTA</span>
                 <div class="foto-container"><img src="Body Splash Tododia Acerola e Hibisco 200 ml.jpg"></div>
                 <div class="info">
                     <h3>Tododia Acerola e Hibisco</h3>
                     <div class="precio-box">
-                        <span class="precio-viejo">$15.800</span>
-                        <span class="precio-nuevo">$12.500</span>
+                        <span class="precio-viejo">$29.600</span>
+                        <span class="precio-nuevo">$25.000</span>
                     </div>
                     <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Tododia%20Acerola" class="btn-ver" target="_blank">VER DETALLES</a>
                 </div>
             </div>
 
             <div class="producto">
-                <span class="tag-promo">PROMO</span>
+                <span class="tag-promo">OFERTA</span>
+                <div class="foto-container"><img src="Humor Próprio Femenino EDT Femenino 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Humor Próprio</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.200</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Humor%20Próprio" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+
+            <div class="producto">
+                <span class="tag-promo">OFERTA</span>
+                <div class="foto-container"><img src="Kaiak Clásico EDT Femenino 100 ml.jpg"></div>
+                <div class="info">
+                    <h3>Kaiak Clásico Femenino</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$62.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Kaiak%20Clásico%20Fem" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Fragancias Masculinas</h2>
+        <div class="grid">
+            <div class="producto">
+                <span class="tag-promo">OFERTA</span>
                 <div class="foto-container"><img src="Kaiak Aventura EDT Masculino 100 ml.jpg"></div>
                 <div class="info">
                     <h3>Kaiak Aventura</h3>
                     <div class="precio-box">
-                        <span class="precio-viejo">$41.200</span>
-                        <span class="precio-nuevo">$32.500</span>
+                        <span class="precio-viejo">$60.800</span>
+                        <span class="precio-nuevo">$40.000</span>
                     </div>
                     <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Kaiak%20Aventura" class="btn-ver" target="_blank">VER DETALLES</a>
                 </div>
             </div>
 
             <div class="producto">
-                <span class="tag-promo">PROMO</span>
+                <span class="tag-promo">OFERTA</span>
+                <div class="foto-container"><img src="Kaiak Clásico EDT Masculino 100 ml.jpg"></div>
+                <div class="info">
+                    <h3>Kaiak Clásico</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.800</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Kaiak%20Clásico" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Fragancias Unisex</h2>
+        <div class="grid">
+            <div class="producto">
+                <span class="tag-promo">OFERTA</span>
                 <div class="foto-container"><img src="Ekos Ryo Festa EDT 75 ml.jpg"></div>
                 <div class="info">
                     <h3>Ekos Ryo Festa</h3>
                     <div class="precio-box">
-                        <span class="precio-viejo">$33.600</span>
-                        <span class="precio-nuevo">$26.500</span>
+                        <span class="precio-viejo">$73.800</span>
+                        <span class="precio-nuevo">$40.000</span>
                     </div>
                     <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Ekos%20Ryo" class="btn-ver" target="_blank">VER DETALLES</a>
                 </div>
             </div>
 
+            <div class="producto">
+                <span class="tag-promo">OFERTA</span>
+                <div class="foto-container"><img src="Humor Transforma EDT 75 ml.jpg"></div>
+                <div class="info">
+                    <h3>Humor Transforma</h3>
+                    <div class="precio-box">
+                        <span class="precio-viejo">$60.200</span>
+                        <span class="precio-nuevo">$40.000</span>
+                    </div>
+                    <a href="https://wa.me/5493586548493?text=Hola%20Cintia!%20Me%20interesa%20ver%20detalles%20de%20Humor%20Transforma" class="btn-ver" target="_blank">VER DETALLES</a>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <footer>
